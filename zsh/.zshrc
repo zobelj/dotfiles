@@ -2,6 +2,9 @@ alias vim="nvim"
 alias v="nvim"
 alias ls="eza -1 --icons=always"
 
+eval "$(ssh-agent)"
+ssh-add --apple-use-keychain ~/.ssh/private_keys/*
+
 # case-insensitive completion
 autoload -Uz compinit && compinit
 zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
