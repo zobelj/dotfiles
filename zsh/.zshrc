@@ -2,8 +2,8 @@ alias vim="nvim"
 alias v="nvim"
 alias ls="eza -1 --icons=always"
 
-eval "$(ssh-agent)"
-ssh-add --apple-use-keychain ~/.ssh/private_keys/*
+eval "$(ssh-agent)" >/dev/null
+ssh-add --apple-use-keychain ~/.ssh/private_keys/* 2>/dev/null
 
 # case-insensitive completion
 autoload -Uz compinit && compinit
