@@ -5,6 +5,9 @@ alias ls="eza -1 --icons=always"
 eval "$(ssh-agent)" >/dev/null
 ssh-add --apple-use-keychain ~/.ssh/private_keys/* 2>/dev/null
 
+# SR AWS profile stuff
+export AWS_PROFILE='sr-prod-mfa'
+
 # case-insensitive completion
 autoload -Uz compinit && compinit
 zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
