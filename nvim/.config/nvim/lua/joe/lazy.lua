@@ -6,7 +6,6 @@ local plugins = {
 		}
 	},
 	{ 'theprimeagen/harpoon' },
-	{ 'github/copilot.vim' },
 	{
 		'nvim-lualine/lualine.nvim',
 		dependencies = { 'nvim-tree/nvim-web-devicons' }
@@ -14,6 +13,9 @@ local plugins = {
 	{ 'Darazaki/indent-o-matic' },
 	{ 'nvim-treesitter/nvim-treesitter' },
 	{ 'startup-nvim/startup.nvim' },
+
+	-- lsp, linting, and formatting
+	{ 'github/copilot.vim' },
 
 	-- themes
 	{ 'navarasu/onedark.nvim' },
