@@ -15,7 +15,7 @@ local plugins = {
 	{ 'startup-nvim/startup.nvim' },
 
 	-- lsp, linting, and formatting
-	{ 'github/copilot.vim' },
+	-- { 'github/copilot.vim' },
 
 	-- themes
 	{ 'navarasu/onedark.nvim' },
