@@ -27,3 +27,10 @@ source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # load starship.rs prompt
 eval "$(starship init zsh)"
+
+# bun completions
+[ -s "/Users/joe/.bun/_bun" ] && source "/Users/joe/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
