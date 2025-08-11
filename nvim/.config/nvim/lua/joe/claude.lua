@@ -7,31 +7,31 @@ local colors = {
   orange = "#CC785C",
   bg = "#262624",
   bg_dark = "#1f1e1d",
-  
-  fg = "#faf9f5",
-  fg_dim = "#D0CEC8",
-  fg_darker = "#A8A6A3",
-  
-  red = "#E5918A",
-  green = "#BAD08A",
-  yellow = "#F0D08A",
-  blue = "#8ABAE5",
-  purple = "#D08AE5",
-  cyan = "#8AE5D0",
-  
-  border = "#4A4845",
-  selection = "#4A4845",
+
+  fg = "#FFFFFF",
+  fg_dim = "#E8E5E0",
+  fg_darker = "#C8C5C0",
+
+  red = "#FF9B9B",
+  green = "#C8FF9B",
+  yellow = "#FFDB9B",
+  blue = "#9BC8FF",
+  purple = "#E89BFF",
+  cyan = "#9BFFE8",
+
+  border = "#6B6A67",
+  selection = "#6B6A67",
   cursor_line = "#2B2A27",
   menu_bg = "#1f1e1d",
-  
-  git_add = "#BAD08A",
-  git_change = "#F0D08A",
-  git_delete = "#E5918A",
-  
-  error = "#E5918A",
-  warning = "#F0D08A",
-  info = "#8ABAE5",
-  hint = "#8AE5D0",
+
+  git_add = "#00FF7F",
+  git_change = "#FFD700",
+  git_delete = "#FF4444",
+
+  error = "#FF9B9B",
+  warning = "#FFDB9B",
+  info = "#9BC8FF",
+  hint = "#9BFFE8",
 }
 
 local function set_highlights()

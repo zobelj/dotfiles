@@ -1,4 +1,4 @@
-local wezterm = require("wezterm")
+local wezterm = require 'wezterm'
 
 -- Claude color scheme
 local claude_colors = {
@@ -13,24 +13,24 @@ local claude_colors = {
   split = '#3C3A37',
 
   ansi = {
-    '#1f1e1d',
-    '#E5918A',
-    '#BAD08A',
-    '#F0D08A',
-    '#8ABAE5',
-    '#D08AE5',
-    '#8AE5D0',
-    '#D0CEC8',
+    '#1f1e1d', -- black (darker background)
+    '#FF9B9B', -- red (much brighter)
+    '#C8FF9B', -- green (much brighter) 
+    '#FFDB9B', -- yellow (much brighter)
+    '#9BC8FF', -- blue (much brighter)
+    '#E89BFF', -- magenta (much brighter)
+    '#9BFFE8', -- cyan (much brighter)
+    '#E8E5E0', -- white (much brighter)
   },
   brights = {
-    '#4A4845',
-    '#F5A8A8',
-    '#C8E5A8',
-    '#F5E0A8',
-    '#A8C8E5',
-    '#E5A8C8',
-    '#A8E5C8',
-    '#faf9f5',
+    '#6B6A67', -- bright black (much brighter)
+    '#FFB8B8', -- bright red (much brighter)
+    '#D8FFB8', -- bright green (much brighter)
+    '#FFEBB8', -- bright yellow (much brighter)
+    '#B8D8FF', -- bright blue (much brighter)
+    '#F8B8FF', -- bright magenta (much brighter)
+    '#B8FFF8', -- bright cyan (much brighter)
+    '#FFFFFF', -- bright white (pure white)
   },
 
   indexed = {[136] = '#CC785C'}, -- Claude orange
@@ -50,18 +50,18 @@ local claude_colors = {
 
 local function setup_claude_theme(config)
   config.colors = claude_colors
-  config.color_scheme = nil
-  
+  config.color_scheme = nil -- Disable built-in color scheme
+
   config.window_background_opacity = 1.0
   config.text_background_opacity = 1.0
-  
+
   config.window_padding = {
     left = 8,
     right = 8,
     top = 8,
     bottom = 8,
   }
-  
+
   config.default_cursor_style = 'BlinkingBlock'
   config.cursor_blink_rate = 800
   config.cursor_blink_ease_in = 'Constant'

@@ -1,42 +1,108 @@
 add_newline = false
 # A minimal left prompt
 format = """$directory$character"""
-# palette = "tokyonight"
+palette = "claude"
 # move the rest of the prompt to the right
 right_format = """$all"""
 command_timeout = 1000
 
 [character]
-vicmd_symbol = "[N] >>>"
-success_symbol = '[➜](bold green)'
+vicmd_symbol = "[N](bold orange) >>>"
+success_symbol = '[➜](bold bright-green)'
+error_symbol = '[➜](bold bright-red)'
+
+[directory]
+style = "bold bright-blue"
+truncation_length = 3
+truncate_to_repo = false
 
 [directory.substitutions]
 '~/tests/starship-custom' = 'work-project'
 
 [git_branch]
-format =  '[$symbol$branch(:$remote_branch)]($style) '
+format = '[$symbol$branch(:$remote_branch)]($style) '
+style = "bright-cyan"
+symbol = " "
+
+[git_status]
+style = "bright-yellow"
 
 [aws]
 format = '[$symbol(profile: "$profile" )(\($region\) )]($style)'
 disabled = true
-style = 'bold blue'
+style = 'bold bright-blue'
 symbol = ""
 
 [golang]
 disabled = true
-format = '[ ](bold cyan)'
+format = '[ ](bold bright-cyan)'
 
 [kubernetes]
 symbol = '☸ '
 disabled = true
 detect_files = ['Dockerfile']
 format = '[$symbol$context( \($namespace\))]($style) '
+style = "bright-green"
 contexts = [
-  { context_pattern = "arn:aws:eks:us-west-2:577926974532:cluster/zd-pvc-omer", style = "green", context_alias = "omerxx", symbol = " " },
+  { context_pattern = "arn:aws:eks:us-west-2:577926974532:cluster/zd-pvc-omer", style = "bright-green", context_alias = "omerxx", symbol = " " },
 ]
 
 [docker_context]
 disabled = true
+style = "bright-blue"
+
+[python]
+disabled = false
+format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+style = "bright-yellow"
+symbol = " "
+
+[nodejs]
+disabled = true
+style = "bright-green"
+
+[package]
+disabled = true
+
+[cmd_duration]
+style = "bright-yellow"
+
+[time]
+disabled = false
+style = "bright-white"
+
+# Custom Claude palette matching your terminal colors
+[palettes.claude]
+# Basic colors (much brighter to match your theme)
+black = "#1f1e1d"
+red = "#FF9B9B"
+green = "#C8FF9B"
+yellow = "#FFDB9B"
+blue = "#9BC8FF"
+purple = "#E89BFF"
+cyan = "#9BFFE8"
+white = "#FFFFFF"
+
+# Bright variants
+bright-black = "#6B6A67"
+bright-red = "#FFB8B8"
+bright-green = "#D8FFB8"
+bright-yellow = "#FFEBB8"
+bright-blue = "#B8D8FF"
+bright-purple = "#F8B8FF"
+bright-cyan = "#B8FFF8"
+bright-white = "#FFFFFF"
+
+# Claude theme colors
+orange = "#CC785C"
+bg = "#262624"
+bg-dark = "#1f1e1d"
+
+# Semantic colors for better readability
+text = "#FFFFFF"
+subtext = "#E8E5E0"
+overlay = "#C8C5C0"
+surface = "#6B6A67"
 
 [palettes.catppuccin_mocha]
 rosewater = "#f5e0dc"
@@ -65,13 +131,4 @@ surface0 = "#313244"
 base = "#1e1e2e"
 mantle = "#181825"
 crust = "#11111b"
-
-[python]
-disabled = false
-
-[nodejs]
-disabled = true
-
-[package]
-disabled = true
 
