@@ -2,6 +2,7 @@ require("joe.set")
 require("joe.remap")
 require("joe.lazy")
 require("joe.colorscheme")
+require("joe.claude").setup()
 
 require("joe.plugins.telescope")
 require("joe.plugins.harpoon")
