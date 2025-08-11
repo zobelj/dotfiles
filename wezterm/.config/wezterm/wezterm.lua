@@ -1,35 +1,36 @@
 local wezterm = require("wezterm")
 
--- Define the Claude color scheme
+-- Claude color scheme
 local claude_colors = {
-  foreground = "#faf9f5",
+  foreground = '#faf9f5',
   background = '#262624',
   cursor_bg = '#CC785C',
   cursor_fg = '#262624',
   cursor_border = '#CC785C',
-  selection_fg = '#E8E6E3',
+  selection_fg = '#faf9f5',
   selection_bg = '#3C3A37',
   scrollbar_thumb = '#3C3A37',
   split = '#3C3A37',
+
   ansi = {
-    '#1f1e1d', -- black (darker background)
-    '#D07A7A', -- red
-    '#A8C07A', -- green
-    '#E6C07B', -- yellow
-    '#7AA8C0', -- blue
-    '#B87AC0', -- magenta
-    '#7AC0B8', -- cyan
-    '#B8B6B3', -- white
+    '#1f1e1d',
+    '#E5918A',
+    '#BAD08A',
+    '#F0D08A',
+    '#8ABAE5',
+    '#D08AE5',
+    '#8AE5D0',
+    '#D0CEC8',
   },
   brights = {
-    '#3C3A37', -- bright black
-    '#E89999', -- bright red
-    '#BAD099', -- bright green
-    '#F0D099', -- bright yellow
-    '#99BAD0', -- bright blue
-    '#D099BA', -- bright magenta
-    '#99D0BA', -- bright cyan
-    '#E8E6E3', -- bright white
+    '#4A4845',
+    '#F5A8A8',
+    '#C8E5A8',
+    '#F5E0A8',
+    '#A8C8E5',
+    '#E5A8C8',
+    '#A8E5C8',
+    '#faf9f5',
   },
 
   indexed = {[136] = '#CC785C'}, -- Claude orange
@@ -39,17 +40,17 @@ local claude_colors = {
   copy_mode_active_highlight_bg = { Color = '#CC785C' },
   copy_mode_active_highlight_fg = { Color = '#262624' },
   copy_mode_inactive_highlight_bg = { Color = '#3C3A37' },
-  copy_mode_inactive_highlight_fg = { Color = '#E8E6E3' },
+  copy_mode_inactive_highlight_fg = { Color = '#faf9f5' },
 
   quick_select_label_bg = { Color = '#CC785C' },
   quick_select_label_fg = { Color = '#262624' },
-  quick_select_match_bg = { Color = '#E6C07B' },
+  quick_select_match_bg = { Color = '#F0D08A' },
   quick_select_match_fg = { Color = '#262624' },
 }
 
 local function setup_claude_theme(config)
   config.colors = claude_colors
-  config.color_scheme = nil -- Disable built-in color scheme
+  config.color_scheme = nil
   
   config.window_background_opacity = 1.0
   config.text_background_opacity = 1.0
@@ -61,22 +62,17 @@ local function setup_claude_theme(config)
     bottom = 8,
   }
   
-  config.default_cursor_style = 'BlinkingBar'
-  config.cursor_blink_rate = 500
+  config.default_cursor_style = 'BlinkingBlock'
+  config.cursor_blink_rate = 800
   config.cursor_blink_ease_in = 'Constant'
   config.cursor_blink_ease_out = 'Constant'
-
+  
   return config
 end
 
 local config = wezterm.config_builder()
 
 config = setup_claude_theme(config)
-
--- other configuration options:
--- config.font = wezterm.font('JetBrains Mono')
--- config.font_size = 14.0
--- etc...
 
 -- config.color_scheme = "Tokyo Night"
 config.font = wezterm.font("MesloLGS Nerd Font Mono")
