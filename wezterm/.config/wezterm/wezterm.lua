@@ -3,7 +3,8 @@ local wezterm = require 'wezterm'
 -- Claude color scheme
 local claude_colors = {
   foreground = '#faf9f5',
-  background = '#262624',
+  -- background = '#262624',
+  background = '#30302e',
   cursor_bg = '#CC785C',
   cursor_fg = '#262624',
   cursor_border = '#CC785C',

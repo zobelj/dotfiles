@@ -5,7 +5,8 @@ local M = {}
 
 local colors = {
   orange = "#CC785C",
-  bg = "#262624",
+  -- bg = "#262624",
+  bg = "#30302e",
   bg_dark = "#1f1e1d",
 
   fg = "#FFFFFF",
