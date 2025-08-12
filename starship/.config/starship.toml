@@ -1,9 +1,9 @@
 add_newline = false
-# A minimal left prompt
-format = """$directory$character"""
+# Better organized prompt format
+format = """$time$directory$git_branch$git_status$python$character"""
 palette = "claude"
-# move the rest of the prompt to the right
-right_format = """$all"""
+# Keep only less important info on the right
+right_format = """$kubernetes$docker_context"""
 command_timeout = 1000
 
 [character]
@@ -13,8 +13,9 @@ error_symbol = '[➜](bold bright-red)'
 
 [directory]
 style = "bold bright-blue"
-truncation_length = 3
+truncation_length = 2
 truncate_to_repo = false
+format = "[$path]($style) "
 
 [directory.substitutions]
 '~/tests/starship-custom' = 'work-project'
@@ -26,6 +27,7 @@ symbol = " "
 
 [git_status]
 style = "bright-yellow"
+format = "([$all_status$ahead_behind]($style) )"
 
 [aws]
 format = '[$symbol(profile: "$profile" )(\($region\) )]($style)'
@@ -70,6 +72,8 @@ style = "bright-yellow"
 [time]
 disabled = false
 style = "bright-white"
+format = "[$time]($style) "
+time_format = "%H:%M"
 
 # Custom Claude palette matching your terminal colors
 [palettes.claude]
@@ -131,4 +135,3 @@ surface0 = "#313244"
 base = "#1e1e2e"
 mantle = "#181825"
 crust = "#11111b"
-
